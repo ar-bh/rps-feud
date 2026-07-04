@@ -2,8 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bwxmqvo4psb4j" path="res://assets/gane_parallax_purple.png" id="1_oa506"]
 [ext_resource type="Script" uid="uid://byyu2ysj7v6x1" path="res://game/main.gd" id="1_xtpaf"]
-[ext_resource type="Texture2D" uid="uid://lbm38afjd5rj" path="res://assets/test_fist.png" id="3_vop5m"]
 [ext_resource type="Texture2D" uid="uid://du4lrmnycyg2j" path="res://assets/logo.png" id="4_5un7r"]
+[ext_resource type="Texture2D" uid="uid://sms0kiig7amm" path="res://assets/left_rock.png" id="4_dgpao"]
+[ext_resource type="Texture2D" uid="uid://bxvsbjhao5yuu" path="res://assets/right_rock.png" id="5_wjctj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vop5m"]
 bg_color = Color(1, 1, 1, 1)
@@ -12,6 +13,9 @@ corner_radius_bottom_right = 80
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5un7r"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_bottom_left = 80
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vop5m"]
+radius = 134.09325
 
 [node name="Main" type="Node2D" unique_id=1270101753]
 script = ExtResource("1_xtpaf")
@@ -24,15 +28,6 @@ autoscroll = Vector2(100, 0)
 scale = Vector2(2.8975, 2.1766667)
 texture = ExtResource("1_oa506")
 centered = false
-
-[node name="TestFist" type="Sprite2D" parent="." unique_id=272195360]
-position = Vector2(118, 535)
-texture = ExtResource("3_vop5m")
-
-[node name="TestFist2" type="Sprite2D" parent="." unique_id=874475580]
-position = Vector2(1029, 531)
-scale = Vector2(-1, 1)
-texture = ExtResource("3_vop5m")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=759488761]
 visible = false
@@ -82,3 +77,37 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_5un7r")
 bbcode_enabled = true
 text = "[center]0[/center]"
 fit_content = true
+
+[node name="LeftPlayer" type="Area2D" parent="." unique_id=236414830 groups=["left_player"]]
+position = Vector2(1029, 531)
+rotation = 3.1415925
+scale = Vector2(1, -1)
+
+[node name="LeftHand" type="Sprite2D" parent="LeftPlayer" unique_id=272195360]
+position = Vector2(798.0001, -40.000008)
+rotation = 3.1415925
+scale = Vector2(0.24166417, -0.24166417)
+texture = ExtResource("4_dgpao")
+
+[node name="LeftCollisionBox" type="CollisionShape2D" parent="LeftPlayer" unique_id=12535886]
+position = Vector2(706, -40)
+rotation = 3.1415925
+scale = Vector2(1, -1)
+shape = SubResource("CircleShape2D_vop5m")
+
+[node name="RightPlayer" type="Area2D" parent="." unique_id=597499632 groups=["right_player"]]
+position = Vector2(1029, 531)
+rotation = 3.1415925
+scale = Vector2(1, -1)
+
+[node name="RightHand" type="Sprite2D" parent="RightPlayer" unique_id=874475580]
+position = Vector2(109, -38.000027)
+rotation = 3.1415925
+scale = Vector2(0.24166417, -0.24166417)
+texture = ExtResource("5_wjctj")
+
+[node name="RightCollisionBox" type="CollisionShape2D" parent="RightPlayer" unique_id=1537768800]
+position = Vector2(206, -40.000042)
+rotation = 3.1415925
+scale = Vector2(1, -1)
+shape = SubResource("CircleShape2D_vop5m")
