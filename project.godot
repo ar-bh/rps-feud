@@ -11,8 +11,48 @@ config_version=5
 [application]
 
 config/name="Rock Paper Scissors Feud"
+run/main_scene="uid://bj1aavxsa0uxe"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[input]
+
+player1_rock={
+"deadzone": 0.2,
+"events": []
+}
+player1_paper={
+"deadzone": 0.2,
+"events": []
+}
+player1_scissors={
+"deadzone": 0.2,
+"events": []
+}
+player1_attack_toggle={
+"deadzone": 0.2,
+"events": []
+}
+player2_rock={
+"deadzone": 0.2,
+"events": []
+}
+player2_paper={
+"deadzone": 0.2,
+"events": []
+}
+player2_scissors={
+"deadzone": 0.2,
+"events": []
+}
+player2_attack_toggle={
+"deadzone": 0.2,
+"events": []
+}
 
 [physics]
 

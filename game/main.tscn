@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bj1aavxsa0uxe"]
+
+[ext_resource type="Texture2D" uid="uid://ba322osjnhrvw" path="res://assets/game_parallax_blue.png" id="1_oa506"]
+[ext_resource type="Script" uid="uid://byyu2ysj7v6x1" path="res://game/main.gd" id="1_xtpaf"]
+
+[node name="Main" type="Node2D" unique_id=1270101753]
+script = ExtResource("1_xtpaf")
+
+[node name="Background" type="Parallax2D" parent="." unique_id=1141416059]
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="BackgroundImage" type="Sprite2D" parent="Background" unique_id=1251397240]
+scale = Vector2(2.8975, 2.1766667)
+texture = ExtResource("1_oa506")
+centered = false
