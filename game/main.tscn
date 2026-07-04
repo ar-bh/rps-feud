@@ -1,7 +1,17 @@
 [gd_scene format=3 uid="uid://bj1aavxsa0uxe"]
 
-[ext_resource type="Texture2D" uid="uid://ba322osjnhrvw" path="res://assets/game_parallax_blue.png" id="1_oa506"]
+[ext_resource type="Texture2D" uid="uid://bwxmqvo4psb4j" path="res://assets/gane_parallax_purple.png" id="1_oa506"]
 [ext_resource type="Script" uid="uid://byyu2ysj7v6x1" path="res://game/main.gd" id="1_xtpaf"]
+[ext_resource type="Texture2D" uid="uid://lbm38afjd5rj" path="res://assets/test_fist.png" id="3_vop5m"]
+[ext_resource type="Texture2D" uid="uid://du4lrmnycyg2j" path="res://assets/logo.png" id="4_5un7r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vop5m"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_bottom_right = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5un7r"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_bottom_left = 80
 
 [node name="Main" type="Node2D" unique_id=1270101753]
 script = ExtResource("1_xtpaf")
@@ -14,3 +24,61 @@ autoscroll = Vector2(100, 0)
 scale = Vector2(2.8975, 2.1766667)
 texture = ExtResource("1_oa506")
 centered = false
+
+[node name="TestFist" type="Sprite2D" parent="." unique_id=272195360]
+position = Vector2(118, 535)
+texture = ExtResource("3_vop5m")
+
+[node name="TestFist2" type="Sprite2D" parent="." unique_id=874475580]
+position = Vector2(1029, 531)
+scale = Vector2(-1, 1)
+texture = ExtResource("3_vop5m")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=759488761]
+visible = false
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 1152.0
+offset_bottom = 219.73909
+scale = Vector2(1, 0.9200002)
+
+[node name="ScoreBox" type="HBoxContainer" parent="." unique_id=147431010]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 1152.0
+offset_bottom = 115.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="LeftScore" type="RichTextLabel" parent="ScoreBox" unique_id=197974675]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/default_color = Color(0.8901961, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 150
+theme_override_styles/normal = SubResource("StyleBoxFlat_vop5m")
+bbcode_enabled = true
+text = "[center]0[/center]"
+
+[node name="TextureRect" type="TextureRect" parent="ScoreBox" unique_id=2126357835]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.27
+texture = ExtResource("4_5un7r")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RightScore" type="RichTextLabel" parent="ScoreBox" unique_id=1719321385]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/default_color = Color(0, 0.53083795, 0.8300566, 1)
+theme_override_font_sizes/normal_font_size = 150
+theme_override_styles/normal = SubResource("StyleBoxFlat_5un7r")
+bbcode_enabled = true
+text = "[center]0[/center]"
+fit_content = true
