@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bwxmqvo4psb4j" path="res://assets/gane_parallax_purple.png" id="1_oa506"]
 [ext_resource type="Script" uid="uid://byyu2ysj7v6x1" path="res://game/main.gd" id="1_xtpaf"]
-[ext_resource type="Texture2D" uid="uid://du4lrmnycyg2j" path="res://assets/logo.png" id="4_5un7r"]
 [ext_resource type="Texture2D" uid="uid://sms0kiig7amm" path="res://assets/left_rock.png" id="4_dgpao"]
 [ext_resource type="Texture2D" uid="uid://bxvsbjhao5yuu" path="res://assets/right_rock.png" id="5_wjctj"]
 
@@ -232,6 +231,10 @@ _data = {
 &"attack": SubResource("Animation_right_attack")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vop5m"]
+content_margin_top = 23.0
+content_margin_bottom = 61.0
+
 [node name="Main" type="Node2D" unique_id=1270101753]
 script = ExtResource("1_xtpaf")
 
@@ -243,14 +246,6 @@ autoscroll = Vector2(100, 0)
 scale = Vector2(2.8975, 2.1766667)
 texture = ExtResource("1_oa506")
 centered = false
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=759488761]
-visible = false
-offset_left = -1.0
-offset_top = -2.0
-offset_right = 1152.0
-offset_bottom = 219.73909
-scale = Vector2(1, 0.9200002)
 
 [node name="ScoreBox" type="HBoxContainer" parent="." unique_id=147431010]
 anchors_preset = 5
@@ -274,13 +269,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_vop5m")
 bbcode_enabled = true
 text = "[center]0[/center]"
 
-[node name="TextureRect" type="TextureRect" parent="ScoreBox" unique_id=2126357835]
+[node name="TimeLeftLabel" type="RichTextLabel" parent="ScoreBox" unique_id=1910175830]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 1.27
-texture = ExtResource("4_5un7r")
-expand_mode = 1
-stretch_mode = 5
+theme_override_font_sizes/normal_font_size = 150
+bbcode_enabled = true
+text = "[center]0[/center]"
 
 [node name="RightScore" type="RichTextLabel" parent="ScoreBox" unique_id=1719321385]
 layout_mode = 2
@@ -316,3 +310,91 @@ centered = false
 
 [node name="RightAnimationPlayer" type="AnimationPlayer" parent="RightPlayer" unique_id=1165454147]
 libraries/ = SubResource("AnimationLibrary_right")
+
+[node name="GameTimer" type="Timer" parent="." unique_id=2009192104]
+wait_time = 15.0
+
+[node name="RoundTimer" type="Timer" parent="." unique_id=2081040996]
+wait_time = 5.0
+
+[node name="Popup" type="Panel" parent="." unique_id=1768653259]
+visible = false
+offset_left = -17.0
+offset_top = 79.0
+offset_right = 1174.0
+offset_bottom = 509.0
+
+[node name="PopupVBox" type="VBoxContainer" parent="Popup" unique_id=1927379348]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 22.0
+offset_right = 1144.0
+offset_bottom = 396.0
+
+[node name="WinnerLabel" type="RichTextLabel" parent="Popup/PopupVBox" unique_id=713129822]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vop5m")
+bbcode_enabled = true
+text = "[center]______ wins![/center]"
+fit_content = true
+
+[node name="NextRoundInLabel" type="RichTextLabel" parent="Popup/PopupVBox" unique_id=157432668]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[center]Next round in...[/center]"
+
+[node name="TimerLabel" type="RichTextLabel" parent="Popup/PopupVBox" unique_id=2143021246]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[center]0[/center]"
+
+[node name="WinnerPopup" type="Panel" parent="." unique_id=1628798273]
+visible = false
+offset_left = -17.0
+offset_top = 79.0
+offset_right = 1174.0
+offset_bottom = 509.0
+
+[node name="PopupVBox" type="VBoxContainer" parent="WinnerPopup" unique_id=1395118602]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 22.0
+offset_right = 1144.0
+offset_bottom = 396.0
+
+[node name="GameWinnerLabel" type="RichTextLabel" parent="WinnerPopup/PopupVBox" unique_id=1021165558]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_font_sizes/normal_font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vop5m")
+bbcode_enabled = true
+text = "[center]______ wins![/center]"
+fit_content = true
+
+[node name="PlayAgainButton" type="Button" parent="WinnerPopup/PopupVBox" unique_id=1767480841]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 40
+text = "Play Again"
+
+[node name="MenuButton" type="Button" parent="WinnerPopup/PopupVBox" unique_id=237548185]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 40
+text = "Main Menu"
+
+[node name="QuitButton" type="Button" parent="WinnerPopup/PopupVBox" unique_id=1642728052]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_font_sizes/font_size = 40
+text = "Quit"

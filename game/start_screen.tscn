@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cwai0277sqj72"]
+
+[ext_resource type="Texture2D" uid="uid://ba322osjnhrvw" path="res://assets/game_parallax_blue.png" id="1_66pef"]
+[ext_resource type="Texture2D" uid="uid://du4lrmnycyg2j" path="res://assets/logo.png" id="2_d017g"]
+[ext_resource type="Script" uid="uid://dwt46j5qsqpfq" path="res://game/start_screen.gd" id="3_start"]
+
+[node name="StartScreen" type="Node2D" unique_id=435907954]
+script = ExtResource("3_start")
+
+[node name="Background" type="Parallax2D" parent="." unique_id=495295166]
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="BackgroundImage" type="Sprite2D" parent="Background" unique_id=1242035674]
+scale = Vector2(2.8975, 2.1766667)
+texture = ExtResource("1_66pef")
+centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=602053288]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=468603584]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="LogoAspect" type="AspectRatioContainer" parent="CanvasLayer/VBoxContainer" unique_id=1528581807]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+ratio = 4.123711
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/LogoAspect" unique_id=574656595]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_d017g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1745173075]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 80
+text = "Play"
+
+[node name="HelpButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=104636997]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 80
+text = "Help"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1870552078]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 80
+text = "Quit"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1012715591]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=1148922209]
+offset_right = 1158.0
+offset_bottom = 655.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer2" unique_id=1522611120]
+offset_left = 16.0
+offset_top = 7.0
+offset_right = 601.0
+offset_bottom = 149.0
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[center]How to play[/center]"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer2" unique_id=1393033388]
+offset_left = 36.0
+offset_top = 116.0
+offset_right = 1132.0
+offset_bottom = 644.0
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "The game plays just like regular rock paper and scissors where rock beats scissors, paper beats rock, and scissors beats paper.
+
+Controls
+Left Player: 🅰  for rock, 🆂 for paper, 🅳 for scissors, and 🆆 for attack toggle
+Right Player: ⬅ for rock, ⬇ for paper, ➡ for scissors, and ⬆ for attack toggle
+
+Each round lasts 15s. First to win 5 rounds wins the game.
+To win, beat the person like regular RPS while attacking (your arm will appear higher when attacking). If both players are attacking, RPS rules decides who wins. By the end of the timer, if only 1 person is attacking, they win. The game draws if no one is attacking."
+
+[node name="BackButton" type="Button" parent="CanvasLayer2" unique_id=1406825466]
+offset_left = 631.0
+offset_top = 11.0
+offset_right = 988.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 50
+text = "Back"
