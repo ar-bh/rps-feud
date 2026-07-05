@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwai0277sqj72"]
 
 [ext_resource type="Texture2D" uid="uid://ba322osjnhrvw" path="res://assets/game_parallax_blue.png" id="1_66pef"]
-[ext_resource type="Texture2D" uid="uid://du4lrmnycyg2j" path="res://assets/logo.png" id="2_d017g"]
+[ext_resource type="Texture2D" uid="uid://glk3eqimduts" path="res://assets/logo.png" id="2_d017g"]
 [ext_resource type="Script" uid="uid://dwt46j5qsqpfq" path="res://game/start_screen.gd" id="3_start"]
 
 [node name="StartScreen" type="Node2D" unique_id=435907954]
