@@ -66,6 +66,7 @@ theme_override_font_sizes/font_size = 80
 text = "Quit"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1012715591]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=1148922209]
 offset_right = 1158.0
@@ -88,14 +89,14 @@ offset_right = 1132.0
 offset_bottom = 644.0
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "The game plays just like regular rock paper and scissors where rock beats scissors, paper beats rock, and scissors beats paper.
+text = "This [rainbow]2 Player[/rainbow] game plays just like regular rock paper and scissors where rock beats scissors, paper beats rock, and scissors beats paper.
 
 Controls
 Left Player: 🅰  for rock, 🆂 for paper, 🅳 for scissors, and 🆆 for attack toggle
 Right Player: ⬅ for rock, ⬇ for paper, ➡ for scissors, and ⬆ for attack toggle
 
 Each round lasts 15s. First to win 5 rounds wins the game.
-To win, beat the person like regular RPS while attacking (your arm will appear higher when attacking). If both players are attacking, RPS rules decides who wins. By the end of the timer, if only 1 person is attacking, they win. The game draws if no one is attacking."
+To win, beat the person like regular RPS while attacking (your arm will appear higher when attacking). If both players are attacking, RPS rules decides who wins. By the end of the timer, if only 1 person is attacking, they win. The game draws if no one is attacking. [tornado][rainbow]Have fun![/rainbow][/tornado]"
 
 [node name="BackButton" type="Button" parent="CanvasLayer2" unique_id=1406825466]
 offset_left = 631.0

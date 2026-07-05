@@ -160,7 +160,7 @@ func _process(delta: float) -> void:
 		elif left_form == "scissors" and right_form == "rock":
 			_end_round("right")
 		elif left_form == "scissors" and right_form == "paper":
-			_end_round("scissors")
+			_end_round("left")
 		#elif left_form == right_form:
 			#_end_round("draw")
 	#endregion
