@@ -14,8 +14,223 @@ corner_radius_bottom_right = 80
 bg_color = Color(1, 1, 1, 1)
 corner_radius_bottom_left = 80
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vop5m"]
-radius = 134.09325
+[sub_resource type="Animation" id="Animation_5un7r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 540)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftHand:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.174, 0.174)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LeftHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -93.96)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftHand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dgpao"]
+resource_name = "attack"
+length = 0.27
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.27),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 540), Vector2(15, 494), Vector2(40, 415)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftHand:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.09995956, 0.1, 0.27),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.174, 0.174), Vector2(0.21098503, 0.21098503), Vector2(0.21100312, 0.21100312), Vector2(0.309455, 0.309455)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LeftHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.09995956, 0.1, 0.27),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -93.96), Vector2(-85.36222, -112.35087), Vector2(-84, -116.999985), Vector2(-71, -136)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftHand:rotation")
+tracks/3/interp = 3
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.09995956, 0.1, 0.27),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 5.727889, 5.7962613, 6.147266]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wjctj"]
+_data = {
+&"RESET": SubResource("Animation_5un7r"),
+&"attack": SubResource("Animation_dgpao")
+}
+
+[sub_resource type="Animation" id="Animation_right_reset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1152, 540)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightHand:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.174, 0.174)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-334.08, -93.96)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightHand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_right_attack"]
+resource_name = "attack"
+length = 0.27
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.27),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1152, 540), Vector2(1137, 494), Vector2(1112, 415)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightHand:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.27),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.174, 0.174), Vector2(0.21100312, 0.21100312), Vector2(0.309455, 0.309455)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.27),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-334.08, -93.96), Vector2(-275, -292), Vector2(-522, -212)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightHand:rotation")
+tracks/3/interp = 3
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.27),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.48692417, 0.13591957]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_right"]
+_data = {
+&"RESET": SubResource("Animation_right_reset"),
+&"attack": SubResource("Animation_right_attack")
+}
 
 [node name="Main" type="Node2D" unique_id=1270101753]
 script = ExtResource("1_xtpaf")
@@ -78,36 +293,26 @@ bbcode_enabled = true
 text = "[center]0[/center]"
 fit_content = true
 
-[node name="LeftPlayer" type="Area2D" parent="." unique_id=236414830 groups=["left_player"]]
-position = Vector2(1029, 531)
-rotation = 3.1415925
-scale = Vector2(1, -1)
+[node name="LeftPlayer" type="Node2D" parent="." unique_id=272195360 groups=["left_player"]]
+position = Vector2(0, 540)
 
-[node name="LeftHand" type="Sprite2D" parent="LeftPlayer" unique_id=272195360]
-position = Vector2(798.0001, -40.000008)
-rotation = 3.1415925
-scale = Vector2(0.24166417, -0.24166417)
+[node name="LeftHand" type="Sprite2D" parent="LeftPlayer" unique_id=272195361]
+position = Vector2(0, -93.96)
+scale = Vector2(0.174, 0.174)
 texture = ExtResource("4_dgpao")
+centered = false
 
-[node name="LeftCollisionBox" type="CollisionShape2D" parent="LeftPlayer" unique_id=12535886]
-position = Vector2(706, -40)
-rotation = 3.1415925
-scale = Vector2(1, -1)
-shape = SubResource("CircleShape2D_vop5m")
+[node name="LeftAnimationPlayer" type="AnimationPlayer" parent="LeftPlayer" unique_id=149810587]
+libraries/ = SubResource("AnimationLibrary_wjctj")
 
-[node name="RightPlayer" type="Area2D" parent="." unique_id=597499632 groups=["right_player"]]
-position = Vector2(1029, 531)
-rotation = 3.1415925
-scale = Vector2(1, -1)
+[node name="RightPlayer" type="Node2D" parent="." unique_id=874475580 groups=["right_player"]]
+position = Vector2(1152, 540)
 
-[node name="RightHand" type="Sprite2D" parent="RightPlayer" unique_id=874475580]
-position = Vector2(109, -38.000027)
-rotation = 3.1415925
-scale = Vector2(0.24166417, -0.24166417)
+[node name="RightHand" type="Sprite2D" parent="RightPlayer" unique_id=874475581]
+position = Vector2(-334.08, -93.96)
+scale = Vector2(0.174, 0.174)
 texture = ExtResource("5_wjctj")
+centered = false
 
-[node name="RightCollisionBox" type="CollisionShape2D" parent="RightPlayer" unique_id=1537768800]
-position = Vector2(206, -40.000042)
-rotation = 3.1415925
-scale = Vector2(1, -1)
-shape = SubResource("CircleShape2D_vop5m")
+[node name="RightAnimationPlayer" type="AnimationPlayer" parent="RightPlayer" unique_id=1165454147]
+libraries/ = SubResource("AnimationLibrary_right")
